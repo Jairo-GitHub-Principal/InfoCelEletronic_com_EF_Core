@@ -1,0 +1,62 @@
+@using Microsoft.AspNetCore.Http;
+@model List<cliente>
+
+   
+   
+<div class="row ">
+    <div class="col-12">
+        <table class="table pt-5 ">
+            
+            
+            <thead class="text-warning ">
+                <tr>
+                <th>ID</th>    
+                <th>Nome</th>
+                <th>Nome de usuario</th>
+                <th>Senha</th>
+                </tr>
+            </thead>
+                        <tbody class="text-light ">
+                            @foreach (cliente item in Model)
+                            {                        
+                            
+                            <tr>
+                            <td>@item.id</td>
+                            <td>@item.nome</td>
+                            <td>@item.nomeUsuario</td>
+                            <td>@item.senha</td>
+                           
+
+                            <td>
+                                <!-- controle de acesso com previlegios diferenciado para o clliente e o usuario Adm-->
+
+                                  
+
+                                        
+                                                <a href="excluirClirente/@item.id">excluir</a>
+                                                <a href="AtualizarCliente/@item.id">Alterar</a>
+                                            
+
+                                            
+                                    
+                                    
+                                        </td>
+                            </tr>
+                            
+                        
+}
+</tbody>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    
+
+
+</table>
+        
+    </div>
+</div>
+
+
+
+

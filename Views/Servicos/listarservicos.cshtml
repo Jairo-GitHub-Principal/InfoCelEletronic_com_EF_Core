@@ -1,0 +1,60 @@
+@using Microsoft.AspNetCore.Http;
+@model List<servicos>
+
+@{
+    Layout = "_Layout";
+    }
+
+
+<table class="table">
+    <thead class="text-warning ">
+        <tr>
+            <th>Serviço ID</th>
+            <th>Categoria do serviço</th>
+            <th>Nome do serviço</th>
+            <th>Quantidade</th>
+            <th>Valor Unitario</th>
+            <th>Valor Total</th>
+            <th>Cliente ID </th>
+            <th>Cliente</th>
+           
+        </tr>
+    </thead>
+    @foreach ( servicos item in Model)
+    {
+        <tbody class="text-light mb-5 ">
+            <tr>
+                <td>@item.id</td>
+                <td>@item.categoriaserv</td>
+                <td>@item.nomedoservico</td>
+                <td>@item.quantidadeserv</td>
+                <td>@item.valorunitario</td>
+                <td>@item.valortotal</td>
+                 <td><a href="/cliente/ListarCliente">@item.clienteId</a></td>
+                <td>@item.clienteNome</td> <!-- melhor colocar aqui o nome de usuario-->
+                
+               
+               
+                
+                <td>
+                    <!-- controle de acesso com previlegios diferenciado para o clliente e o usuario Adm-->
+            
+
+                        <a href="atualizaservico?Id=@item.id">Atualizar</a>
+                        <a href="excluirservico?Id=@item.id">Excluir</a>
+                  </td>
+
+
+            </tr>
+
+        </tbody>
+
+
+
+
+
+    }
+
+
+</table>
+

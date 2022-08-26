@@ -1,0 +1,52 @@
+@model cliente
+
+@{
+  Layout = "_Layout";
+
+}
+
+<div class="row pt-5">
+  <div class="col-md-3 col-lg-4"></div>
+  <div class="col-sm-12 col-md-6 col-lg-4 mt-5 mb-5 text-light">
+
+
+    <form method="Post" asp-controller="cliente" asp-action="AtualizarCliente">
+      <h1>Atualize seu cadastro </h1>
+
+
+       <div class="form-group">
+                                            
+                                            <input type="text" asp-for="nome"  class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Seu nome" class="bg-light" >
+                                            
+                                        </div>                                               
+                 
+                                       
+                                        <div class="form-group">
+                                            
+                                            <input type=""  asp-for="email" class="form-control"  placeholder="E-mail" class="bg-light" >
+                                        </div>
+
+                                         <div class="form-group">
+                                            
+                                            <input type=""  asp-for="nomeUsuario" class="form-control"  placeholder="nomeUsuario" class="bg-light" >
+                                        </div>
+
+                                        
+                                         <div class="form-group">
+                                            
+                                            <input type=""  asp-for="senha" class="form-control"  placeholder="senha" class="bg-light" >
+                                        </div>
+
+
+
+                                                                                                                
+                                       
+                                        <input type="text" asp-for="id">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+
+      
+
+    </form>
+  </div>
+  <div class="col-md-3 col-lg-4"></div>
+</div>
